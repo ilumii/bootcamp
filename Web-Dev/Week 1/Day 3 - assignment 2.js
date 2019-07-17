@@ -162,3 +162,15 @@ Array.prototype.myIndexOf = function (target){
   }
   return -1;
 }
+
+//push
+function push(arr,e){
+  arr[arr.length] = e;
+  return arr;
+}
+
+Array.prototype.myPush = function(e) {
+  this[this.length] = e;
+  return this;
+}
+
