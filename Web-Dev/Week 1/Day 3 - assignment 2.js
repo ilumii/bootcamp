@@ -13,6 +13,13 @@ function isBelow(e){
   return e<40;
 }
 
+let object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+}
+
+
 //for each
 function forEach(arr, cb){
   for (let i =0; i<arr.length;i++){
@@ -172,5 +179,65 @@ function push(arr,e){
 Array.prototype.myPush = function(e) {
   this[this.length] = e;
   return this;
+}
+
+//lastindexof()
+function lastIndexOf(arr,target){
+  let index = -1;
+  for (let i = 0; i<arr.length;i++){
+    if(arr[i]===target){
+      index = i;
+    }
+  }
+  return index;
+}
+
+Array.prototype.mylastIndexOf = function(target) {
+  let index = -1;
+  for (let i = 0; i<this.length;i++){
+    if(this[i]===target){
+      index = i;
+    }
+  }
+  return index;
+}
+
+//object.keys
+function grabKeys(arr){
+  let keys = [];
+  for(let i in arr){
+    keys.push(i);
+  }
+  return keys;
+}
+
+
+Object.prototype.myGrabKeys = function (arr){
+  let keys = [];
+  for (let i in arr){
+    if(arr.hasOwnProperty(i)){
+      keys.push(i);
+    }
+  }
+  return keys;
+}
+
+//
+function grabValue (arr){
+  let values = [];
+    for(let i in arr){
+      values.push(arr[i]);
+    }
+  return values;
+}
+
+Object.prototype.myGrabValue = function (arr){
+  let values = [];
+  for (let i in arr){
+    if(arr.hasOwnProperty(i)){
+      values.push(arr[i]);
+    }
+  }
+  return values;
 }
 
