@@ -212,7 +212,7 @@ function grabKeys(arr){
 }
 
 
-Object.prototype.myGrabKeys = function (arr){
+Object.myGrabKeys = function (arr){
   let keys = [];
   for (let i in arr){
     if(arr.hasOwnProperty(i)){
@@ -231,7 +231,7 @@ function grabValue (arr){
   return values;
 }
 
-Object.prototype.myGrabValue = function (arr){
+Object.myGrabValue = function (arr){
   let values = [];
   for (let i in arr){
     if(arr.hasOwnProperty(i)){
@@ -240,4 +240,3 @@ Object.prototype.myGrabValue = function (arr){
   }
   return values;
 }
-
