@@ -12,7 +12,7 @@ var x = document.getElementsByClassName("second");
 
 //getting all Select a list item with a class of third, but only the list item inside of the ol tag.
 var y = document.getElementsByTagName("OL")[0];
-y.getElementsByClassName("third")[0];
+y.getElementsByClassName("third")[0].style.color ="blue";
 
 //giving the section with id of container a textbox hello
 var textbox = document.createElement("textarea");
