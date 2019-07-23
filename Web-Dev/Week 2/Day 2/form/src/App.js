@@ -39,16 +39,10 @@ class App extends Component {
             <div className="top">
               <button onClick={()=>this.changeState()}>Edit</button>
             </div>
-            <form className="body">
-              <label>
-                First Name:
-                <input readOnly value={this.state.userFirstDefualt}/>
-              </label>
-              <label>
-                Last Name:
-                <input readOnly value={this.state.userLastDefault}/>
-              </label>
-            </form>
+            <div className="body">
+              <h1>First Name: {this.state.userFirstDefualt}</h1>
+              <h1>Last Name: {this.state.userLastDefault}</h1>
+            </div>
           </div>
         ):(
           <div className="container">
@@ -60,11 +54,11 @@ class App extends Component {
             <form className="body">
               <label>
                 First Name:
-                <input type="text" onChange={this.handleChange('first')}/>
+                <input type="text" defaultValue={this.state.userFirstDefualt} onChange={this.handleChange('first')}/>
               </label>
               <label>
                 Last Name:
-                <input type="text" onChange={this.handleChange('last')}/>
+                <input type="text" defaultValue={this.state.userLastDefault} onChange={this.handleChange('last')}/>
               </label>
             </form>
           </div>
