@@ -1,0 +1,41 @@
+.display{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label{
+  display:table-row;
+}
+
+input{
+  display: table-cell;
+}
+
+.container{
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: #000;
+}
+
+.top{
+  color: #000;
+  font-size: 17px;
+  font-weight: 400;
+  overflow: visible;
+  text-align: right;
+}
+
+.body{
+  display: block;
+  overflow: auto;
+  padding: 5px 10px;
+  font-size:17px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
