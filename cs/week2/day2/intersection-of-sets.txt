@@ -1,17 +1,18 @@
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        set<int> nums1_vals;
-        for (int i = 0; i < nums1.size(); i++) {
-            nums1_vals.insert(nums1[i]);
+        vector<int> duplicate;
+        unordered_set<int> set;
+        for(int i =0; i<nums1.size();i++){
+            set.insert(nums1[i]);
         }
-        set<int> intersection;
-        for (int j = 0; j < nums2.size(); j++) {
-            if (nums1_vals.find(nums2[j]) != nums1_vals.end()) {
-                intersection.insert(nums2[j]);
+        for(int i = 0; i<nums2.size();i++){
+            if(set.find(nums2[i]) != set.end()){ //found in set
+                if(find(duplicate.begin(),duplicate.end(), nums2[i])==duplicate.end()){ // not found
+                    duplicate.push_back(nums2[i]);
+                }
             }
         }
-        vector<int> result(intersection.begin(), intersection.end());
-        return result;
+        return duplicate;
     }
 };
