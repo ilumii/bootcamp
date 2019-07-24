@@ -1,0 +1,24 @@
+class Solution {
+public:
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> result; 
+        unordered_map<string,vector<string>> Map;
+        for(int i =0; i<strs.size();i++){
+            string temp = strs[i];
+            sort(temp.begin(),temp.end());
+            Map[temp].push_back(strs[i]);
+        }
+        for(auto i:Map){
+            result.push_back(i.second);
+        }
+        return result;
+    }
+};
+
+/*
+// get a unordered map, usually to check for anagrams you map both and check for equality
+//  in this case we sort it to obtaini a key then push trings back according to key into a vector 
+// then we push all vectors into the double vector
+//
+//
+*/
