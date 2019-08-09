@@ -1,0 +1,35 @@
+class Solution {
+public:
+    bool find132pattern(vector<int>& nums) {
+        if(nums.size() == 0){
+            return 0;
+        }
+        int min = nums[0];
+        for(auto i:nums)
+        {
+            if(i<min)min =i;
+            first.push_back(min);
+        }    
+        for(int i= nums.size()-1; i>=0;i--){
+            if(second.empty()){
+                second.push(nums[i]);
+            }
+            else if(nums[i]<second.top()){
+                second.push(nums[i]);
+            }
+            else if(nums[i]>second.top()){
+                while(!second.empty() && nums[i]>second.top()){
+                    if(nums[i]>first[i] && second.top()>first[i] && second.top() <nums[i]){
+                        return true;
+                    }               
+                    second.pop();
+                }
+                second.push(nums[i]);
+            }
+        }
+        return false;
+    }
+private:
+    stack<int> second;
+    vector<int> first;
+};
